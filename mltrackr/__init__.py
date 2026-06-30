@@ -11,4 +11,4 @@ __all__ = [
     "export_csv", "export_json", "clear_all",
     "generate_report", "configure_watch", "watch", "suggest", "configure",
 ]
-__version__ = "0.3.0"
+__version__ = "0.3.1"
