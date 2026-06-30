@@ -10,7 +10,7 @@ for lr in [1e-2, 1e-3, 1e-4]:
             for step in range(30):
                 noise = random.uniform(-0.03, 0.03)
                 loss = (1.5 / (1 + lr * 200 * step)) + noise
-                acc  = min(0.99, 0.5 + lr * 150 * step / (1 + lr * 50 * step)) + noise
+                acc  = min(0.99, max(0.0, 0.5 + lr * 150 * step / (1 + lr * 50 * step)) + noise)
                 mltrackr.log(loss=round(loss, 4), accuracy=round(acc, 4), step=step)
             mltrackr.note(f"lr={lr} bs={bs} - check dashboard for curves")
 
